@@ -6,3 +6,57 @@ body {
   color: $primary-font-color;
 
 }
+
+.wrapper {
+  width: 1080px;
+  height: 610px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  width: 1080px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 290px;
+}
+
+.card {
+  width: 200px;
+  height: 290px;
+  background-color: red;
+  border-radius: 8px;
+  img {
+    width: 100%;
+  }
+}
+
+.flip {
+  animation: flip .2s linear;
+}
+
+.flipBack {
+  animation: cardFlip .2s linear forwards;
+}
+
+@keyframes flip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(90deg);
+  }
+}
+@keyframes cardFlip {
+  from {
+    transform: rotateY(90deg);
+    background-size: cover;
+  }
+  to {
+    transform: rotateY(0deg);
+    background-size: cover;
+  }
+}
